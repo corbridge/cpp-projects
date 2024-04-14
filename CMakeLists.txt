@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.20.0)
 
 project(hello VERSION "0.1")
 
-configure_file(TutorialConfig.h.in TutorialConfig.h)
+configure_file(VersionConfig.h.in VersionConfig.h)
 
 add_executable(hello main.cpp)
 
