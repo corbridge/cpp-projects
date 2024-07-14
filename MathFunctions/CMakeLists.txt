@@ -1,1 +1,0 @@
-target_sources(hello PUBLIC MathFunctions.cpp MathFunctions.h)
