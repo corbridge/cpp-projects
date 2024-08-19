@@ -2,14 +2,16 @@
 #include <windows.h>
 #include "board.h"
 
-int height = 20;
-int width = 70;
-
-int SnakePosition_width = 1;
-int SnakePosition_height = 4;
-
 int main()
 {
-    Board tablero(width, height);
+    Board tablero;
+
     tablero.displayBoard();
+    for(int i = 0; i < 10; i++)
+    {
+        tablero.updateBoard(i + 1, 9);
+        system("cls");
+        tablero.displayBoard();
+
+    }
 }
