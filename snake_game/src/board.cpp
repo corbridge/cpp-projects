@@ -1,15 +1,15 @@
 #include "board.h"
 
-Board::Board(int width, int height) 
+Board::Board() 
 {
     // Inicializa el tablero vacío
     grid.resize(height, std::vector<char>(width, ' '));
 
     for (int i = 0; i < width; ++i) {
-        grid[0][i] = grid[height - 1][i] = '#';
+        grid[0][i] = grid[height - 1][i] = '-';
     }
     for (int i = 0; i < height; ++i) {
-        grid[i][0] = grid[i][width - 1] = '#';
+        grid[i][0] = grid[i][width - 1] = '|';
     }
 }
 
@@ -22,5 +22,17 @@ void Board::displayBoard()
             std::cout << cell;
         }
         std::cout << std::endl;
+    }
+}
+
+void Board::updateBoard(int pos_x, int pos_y)
+{
+    if(pos_x < width && pos_y < height)
+    {
+        grid[pos_x][pos_y] = 'o';
+    }
+    else
+    {
+        std::cout<<"Wrong position"<<std::endl;
     }
 }
