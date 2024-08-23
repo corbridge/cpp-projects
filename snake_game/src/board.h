@@ -8,7 +8,6 @@ class Board
         int width = 70;
         std::vector<std::vector<char>> grid;
         std::vector<std::vector<char>>emptyGrid;
-
     
     public:
         // Constructor

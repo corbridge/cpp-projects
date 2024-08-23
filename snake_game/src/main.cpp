@@ -8,14 +8,14 @@ int main()
     COORD cursorPos = {0, 0};
 
     Board tablero;
-
-    tablero.displayBoard();
+    system("cls");
     for(int i = 0; i < 10; i++)
     {
         tablero.updateBoard(i + 1, 9);
         SetConsoleCursorPosition(hConsole, cursorPos);
         tablero.displayBoard();
         Sleep(20);
+        SetConsoleCursorPosition(hConsole, cursorPos);
         tablero.clearBoard();
 
     }
