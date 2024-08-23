@@ -36,3 +36,16 @@ void Board::updateBoard(int pos_x, int pos_y)
         std::cout<<"Wrong position"<<std::endl;
     }
 }
+
+void Board::clearBoard()
+{
+    emptyGrid.resize(height, std::vector<char>(width, ' '));
+    for (const auto& row : emptyGrid)
+    {
+        for(char cell : row)
+        {
+            std::cout << cell;
+        }
+        std::cout << std::endl;
+    }
+}

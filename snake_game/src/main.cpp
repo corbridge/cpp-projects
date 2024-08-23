@@ -16,6 +16,7 @@ int main()
         SetConsoleCursorPosition(hConsole, cursorPos);
         tablero.displayBoard();
         Sleep(20);
+        tablero.clearBoard();
 
     }
 }
