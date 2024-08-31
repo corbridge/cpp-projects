@@ -50,6 +50,21 @@ void Board::updateBoard(COORD position)
             grid[previous_position.Y][previous_position.X] = ' ';
         }
 
+        if(previous_position.Y == position.Y)
+        {
+            grid[position.Y][position.X] = 'o';
+        }
+        else if(previous_position.Y < position.Y)
+        {
+            grid[previous_position.Y][previous_position.X] = ' ';
+            grid[position.Y][position.X] = 'o';
+        }
+        else
+        {
+            grid[position.Y][position.X] = 'o';
+            grid[previous_position.Y][previous_position.X] = ' ';
+        }
+
     }
     else
     {
