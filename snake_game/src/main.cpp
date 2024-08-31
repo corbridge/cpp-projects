@@ -9,14 +9,10 @@ int main()
 
     Board tablero;
     system("cls");
-    for(int i = 0; i < 10; i++)
+    while(!(GetAsyncKeyState(VK_ESCAPE) & 0x8000))
     {
-        tablero.updateBoard(i + 1, 9);
         SetConsoleCursorPosition(hConsole, cursorPos);
+        tablero.updateBoard(1, 9);
         tablero.displayBoard();
-        Sleep(20);
-        SetConsoleCursorPosition(hConsole, cursorPos);
-        tablero.clearBoard();
-
     }
 }
