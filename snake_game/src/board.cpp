@@ -27,9 +27,29 @@ void Board::displayBoard()
 
 void Board::updateBoard(COORD position)
 {
+    static COORD previous_position;
+    static COORD current_position;
+
+    previous_position = current_position;
+    current_position = position;
+    
     if(position.X < width - 2 && position.Y < height - 2)
     {
-        grid[position.Y][position.X] = 'o';
+        if(previous_position.X == position.X)
+        {
+            grid[position.Y][position.X] = 'o';
+        }
+        else if(previous_position.X < position.X)
+        {
+            grid[previous_position.Y][previous_position.X] = ' ';
+            grid[position.Y][position.X] = 'o';
+        }
+        else
+        {
+            grid[position.Y][position.X] = 'o';
+            grid[previous_position.Y][previous_position.X] = ' ';
+        }
+
     }
     else
     {
