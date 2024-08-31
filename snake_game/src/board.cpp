@@ -25,11 +25,11 @@ void Board::displayBoard()
     }
 }
 
-void Board::updateBoard(int pos_x, int pos_y)
+void Board::updateBoard(COORD position)
 {
-    if(pos_x < width && pos_y < height)
+    if(position.X < width - 2 && position.Y < height - 2)
     {
-        grid[pos_x][pos_y] = 'o';
+        grid[position.Y][position.X] = 'o';
     }
     else
     {
@@ -48,4 +48,14 @@ void Board::clearBoard()
         }
         std::cout << std::endl;
     }
+}
+
+int Board::getHeight()
+{
+    return height;
+}
+
+int Board::getWidth()
+{
+    return width;
 }

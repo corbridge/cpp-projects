@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <windows.h>
 
 class Board
 {
@@ -15,5 +16,7 @@ class Board
 
         void displayBoard();
         void clearBoard();
-        void updateBoard(int pos_x, int pos_y);
+        void updateBoard(COORD position);
+        int getHeight();
+        int getWidth();
 };
